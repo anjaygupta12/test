@@ -1,0 +1,38 @@
+<app-header></app-header>
+<h1>Hello Angular</h1>
+<h2>{{ title }}</h2>
+<p>{{ getName() }}</p>
+<h1>{{ object.name }}</h1>
+<h1>{{ object.age }}</h1>
+<app-list></app-list>
+<app-login [items]="name"></app-login>
+<button (click)="clicked('just I am checking parametters!..','Anjay Gupta')">click me</button>
+<br><br><br>
+<input type="text" #box (keyup)="clickinput(box.value)"><br>
+<input type="text" #box1 (keydown)="clickinput(box1.value)"><br>
+<input type="text" #box2 (blur)="clickinput(box2.value)"><br>
+<br><br><br>
+<input type="text" placeholder="Enrter your Nmae" #box123 (input)="getvalue(box123.value)">
+<p>Your value is: {{ valuename1 }}</p>
+<br><br><br>
+<h1>if conditions</h1>
+<p *ngIf="show=='yes'; then ifblock else elseblock">
+  testing for basic if condition in Angular
+</p>
+
+<ng-template #ifblock>
+<h1>if condition currect</h1>
+</ng-template>
+<ng-template #elseblock>
+<h1>Else condition currect</h1>
+</ng-template><br><br>
+<h1>counter</h1>
+<button (click)="counters('add')">++</button><br>
+<p>{{ count }}</p><br>
+<button (click)="counters('minus')">--</button><br><br>
+<h1 [style.color]="color">for loop</h1>
+<button (click)="colorchange()">hi color change</button>
+<p *ngFor="let item of user" >{{ item }}</p><br><br>
+<h1 *ngIf="display">toggel</h1>
+<button (click)="togel()">Toggle </button>
+
